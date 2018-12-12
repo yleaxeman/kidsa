@@ -5,14 +5,14 @@
 }
 
 html {
-	background: linear-gradient(#000 10em, #444) fixed;
+	background: linear-gradient(#000 10em, #333) fixed;
 	height: 100%;
 }
 
 body {
 	font-family: Helvetica, sans-serif;
 	font-size: 100%;
-	color: white;
+	color: #eee;
 }
 
 h1 {
@@ -38,12 +38,13 @@ img {
 
 table {
 	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 th,
 td {
-	border-top: 1px solid #666;
-	padding: .5em .75em;
+	border-top: 1px solid #444;
+	padding: .25em .75em;
 	text-align: left;
 }
 
@@ -52,12 +53,19 @@ td:first-child {
 	padding-left: 0;
 }
 
-thead th {
-	border: 0;
+thead th,
+thead td {
+	border-width: 2px;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+tr:nth-child(even) td {
+	background-color: rgba(255, 255, 255, .05);
 }
 
 .page-top {
-	background: linear-gradient(#444, #000 70%);
+	background: linear-gradient(#333, #000 70%);
 	overflow: hidden;
 	padding: 1.5em 1em;
 	text-align: center;
@@ -104,12 +112,17 @@ thead th {
 .content {
 	margin: auto;
 	max-width: 60em;
+	padding: 1em;
 }
 
-.deck-table .icon {
-	width: 3em;
+.deck-table {
+	margin-top: 2em;
 }
 
-.deck-table .level {
+.deck-icon-cell {
+	width: 4em;
+}
+
+.deck-level {
 	text-align: right;
 }
