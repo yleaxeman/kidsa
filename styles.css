@@ -26,6 +26,36 @@ h1 {
 		0 .5em 0 #000;
 }
 
+p {
+	margin-bottom: 1em;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th,
+td {
+	border-top: 1px solid #666;
+	padding: .5em .75em;
+	text-align: left;
+}
+
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+
+thead th {
+	border: 0;
+}
+
 .page-top {
 	background: linear-gradient(#444, #000 70%);
 	overflow: hidden;
@@ -69,4 +99,17 @@ h1 {
 	display: block;
 	padding: .5em 1em;
 	text-decoration: none;
+}
+
+.content {
+	margin: auto;
+	max-width: 60em;
+}
+
+.deck-table .icon {
+	width: 3em;
+}
+
+.deck-table .level {
+	text-align: right;
 }

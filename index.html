@@ -18,7 +18,7 @@
 	</header>
 
 	<main class="content">
-		<div id="clashData"></div>
+		<div id="clashDataContainer"></div>
 	</main>
 
 	<footer class="page-footer">
@@ -30,9 +30,34 @@
 	    var key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTc4NywiaWRlbiI6IjQwMjc1Nzc0Mjc0NzQ1MT\
 M5MiIsIm1kIjp7fSwidHMiOjE1Mzg2NjQ3OTQ2Mjd9.0JLa2j04z96C3iwkDcPVO_PP6G3jnyFJ_RQ7OVzQmow";
 	    var url = "https://api.royaleapi.com/player/JYG8VPL";
-	    console.log(httpGet(url,key));
-	    var clashData = document.getElementById("clashData");
-	    clashData.innerHTML = httpGet(url,key);
+	    
+	    var clashDataContainer = document.getElementById("clashDataContainer");
+	    var clashData = JSON.parse(httpGet(url, key));
+
+	    var clashMyName = "<p>Navn: <strong>" + clashData.name + "</strong></p>";
+	    var clashMyTrophies = "<p>Trofeer: <strong>" + clashData.trophies + "</strong></p>";
+
+	    var currentDeckCount = clashData.currentDeck.length;
+	    var currentDeckString = "<table class='deck-table'><thead><tr><th>Avatar</th><th>Navn</th><th class='level'>Level</th></tr>";
+	    for (i = 0; i < currentDeckCount; i++) {
+    		currentDeckString +=
+    			"<tr>" +
+    				"<td>" +
+    					"<img class='icon' src='" + clashData.currentDeck[i].icon + "' />" +
+    				"</td>" +
+	    			"<td>" +
+	    				clashData.currentDeck[i].name +
+					"</td><td class='level'>" +
+						clashData.currentDeck[i].level +
+					"</td>" +
+				"</tr>";
+    	}
+    	currentDeckString += "</tr>";
+
+	    clashDataContainer.innerHTML =
+	    	clashMyName +
+	    	clashMyTrophies +
+	    	currentDeckString;
 	}
 
 	function httpGet(url,key){
