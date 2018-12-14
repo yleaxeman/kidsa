@@ -107,11 +107,16 @@ tr:nth-child(even) td {
 }
 
 .main-nav a {
-	background-color: #0f0;
+	background-color: #0c0;
 	color: black;
 	display: block;
 	padding: .5em 1em;
 	text-decoration: none;
+}
+
+.main-nav .active {
+	background-color: #0f0;
+	cursor: default;
 }
 
 .content {
@@ -143,23 +148,23 @@ tr:nth-child(even) td {
 	margin-right: 0;
 }
 
-.deck-table {
+.clash-table {
 	margin-top: 2em;
 }
 
-.deck-icon-cell {
+.clash-icon-cell {
 	width: 3em;
 }
 
-.deck-icon {
+.clash-icon {
 	transition: transform .125s;
 }
 
-.deck-level {
+.clash-level {
 	text-align: right;
 }
 
-.deck-table tr:hover .deck-icon {
+.clash-table tr:hover .clash-icon {
 	transform: scale(3) translateX(.7em);
 	transition: transform .25s;
 }
