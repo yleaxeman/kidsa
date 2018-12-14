@@ -35,11 +35,19 @@ M5MiIsIm1kIjp7fSwidHMiOjE1Mzg2NjQ3OTQ2Mjd9.0JLa2j04z96C3iwkDcPVO_PP6G3jnyFJ_RQ7O
 	    var clashDataContainer = document.getElementById("clashDataContainer");
 	    var clashData = JSON.parse(httpGet(url, key));
 
-	    var clashMyName = "<p>Navn: <strong>" + clashData.name + "</strong></p>";
-	    var clashMyTrophies = "<p>Trofeer: <strong>" + clashData.trophies + "</strong></p>";
+	    var clashMyName = "<dt>Navn:</dt> <dd>" + clashData.name + "</dd>";
+	    var clashMyTrophies = "<dt>Trofeer:</dt> <dd>" + clashData.trophies + "</dd>";
+	    var clashMyClan = "<dt>Klan:</dt> <dd>" + clashData.clan.name + "</dd>";
 
 	    var currentDeckCount = clashData.currentDeck.length;
-	    var currentDeckString = "<table class='deck-table'><thead><tr><td>&nbsp;</td><th>Navn</th><th class='level'>Level</th></tr></thead>";
+	    var currentDeckString = "<table class='deck-table'><thead>" +
+	    	"<tr>" +
+		    	"<td>&nbsp;</td>" +
+		    	"<th>Navn</th>" +
+		    	"<th class='level'>Level</th>" +
+		    	"<th class='level'>Maks level</th>" +
+		    	"<th>Beskrivelse</th>" +
+	    	"</tr></thead><tbody>";
 	    for (i = 0; i < currentDeckCount; i++) {
     		currentDeckString +=
     			"<tr>" +
@@ -50,14 +58,21 @@ M5MiIsIm1kIjp7fSwidHMiOjE1Mzg2NjQ3OTQ2Mjd9.0JLa2j04z96C3iwkDcPVO_PP6G3jnyFJ_RQ7O
 	    				clashData.currentDeck[i].name +
 					"</td><td class='deck-level'>" +
 						clashData.currentDeck[i].level +
+					"</td><td class='deck-level'>" +
+						clashData.currentDeck[i].maxLevel +
+					"</td><td>" +
+						clashData.currentDeck[i].description +
 					"</td>" +
 				"</tr>";
     	}
-    	currentDeckString += "</tr>";
+    	currentDeckString += "</tbody>";
 
 	    clashDataContainer.innerHTML =
-	    	clashMyName +
-	    	clashMyTrophies +
+	    	"<dl class='my-clash'>" +
+		    	clashMyName +
+		    	clashMyTrophies +
+		    	clashMyClan +
+	    	"</dl>" +
 	    	currentDeckString;
 	}
 

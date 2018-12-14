@@ -39,6 +39,7 @@ img {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	margin-bottom: 2em;
 }
 
 th,
@@ -46,6 +47,10 @@ td {
 	border-top: 1px solid #444;
 	padding: .25em .75em;
 	text-align: left;
+}
+
+th {
+	vertical-align: bottom;
 }
 
 th:first-child,
@@ -115,14 +120,46 @@ tr:nth-child(even) td {
 	padding: 1em;
 }
 
+.my-clash {
+	overflow: hidden;
+	padding-bottom: .5em;
+}
+
+.my-clash dt,
+.my-clash dd {
+	float: left;
+}
+
+.my-clash dt {
+	margin-right: .5em;
+}
+
+.my-clash dd {
+	font-weight: bold;
+	margin-right: 1.5em;
+}
+
+.my-clash dd:last-child {
+	margin-right: 0;
+}
+
 .deck-table {
 	margin-top: 2em;
 }
 
 .deck-icon-cell {
-	width: 4em;
+	width: 3em;
+}
+
+.deck-icon {
+	transition: transform .125s;
 }
 
 .deck-level {
 	text-align: right;
+}
+
+.deck-table tr:hover .deck-icon {
+	transform: scale(3) translateX(.7em);
+	transition: transform .25s;
 }
