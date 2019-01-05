@@ -2,23 +2,26 @@
 <html lang="no" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clash Royale Stats</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body onload="initAPI()">
 
-    <h1>Clash Royale Stats</h1>
+    <h1 class="page-title">Clash Royale stats</h1>
 
-    <p id="current-user"></p>
+    <p class="user" id="current-user"></p>
 
-    <nav>
-      <button type="button">Trophies</button>
-      <button type="button">Deck</button>
-      <button type="button">Cards</button>
+    <nav class="nav">
+      <button class="nav__item" type="button">Klan</button>
+      <button class="nav__item" type="button">Statistikk</button>
+      <button class="nav__item" type="button">Spill</button>
+      <button class="nav__item" type="button">Nåværende kort</button>
+      <button class="nav__item" type="button">Alle kort</button>
+      <button class="nav__item" type="button">Prestasjoner</button>
     </nav>
 
-    <div id="clash-data"></div>
-
+    <div class="data" id="clash-data"></div>
 
     <script type="text/javascript" src="script.js"></script>
   </body>

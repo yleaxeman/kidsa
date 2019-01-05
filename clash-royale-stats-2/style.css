@@ -1,3 +1,153 @@
-body {
-  background: red;
+::-moz-selection {
+  background: #000;
+  color: #f93;
 }
+::selection {
+  background: #000;
+  color: #f93;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: #fafafa;
+}
+
+body {
+	color: #333;
+	display: grid;
+	font-size: 1em;
+	grid-template-columns: 10vw auto 10vw;
+	font-family: sans-serif;
+}
+
+body > * {
+	grid-column: 2;
+	min-width: 0;
+}
+
+.page-title {
+	background-image: linear-gradient(175deg, #ff0, #f00);
+	color: white;
+	font-size: 1.5em;
+	grid-column: 1 / -1;
+	margin-bottom: 1px;
+	padding: .65em .75em .75em;
+	position: relative;
+	text-align: center;
+	text-shadow:
+		0 0 1px #f00,
+		0 .125em .25em #f00,
+		0 .25em .5em #f90,
+		0 .375em .75em #ff0;
+	text-transform: uppercase;
+}
+
+.page-title::before,
+.page-title::after {
+	background-image: linear-gradient(to right, #f00, #ff0);
+	border-top: 1px solid white;
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 5px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+.page-title::before {
+	border-top: 0;
+	border-bottom: 1px solid white;
+	bottom: auto;
+	top: 0;
+}
+
+.nav {
+	background-color: #def;
+	border-top: 1px solid #09f;
+	border-bottom: 1px solid #09f;
+	grid-column: 1 / -1;
+	padding: .5em;
+	text-align: center;
+}
+.nav__item:first-child {
+	border-radius: .5em .5em 0 0;
+}
+.nav__item:last-child {
+	border-radius: 0 0 .5em .5em;
+}
+
+.nav__item {
+	background-color: #09f;
+	border: 0;
+	color: white;
+	display: block;
+	font-size: inherit;
+	margin-bottom: 1px;
+	padding: .75em .5em;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.user {
+	font-size: 1.5em;
+	min-height: 3.25em;
+	padding: 1em 0;
+	text-align: center;
+}
+
+
+@media (min-width: 30em) {
+	.page-title {
+		font-size: 2em;
+	}
+
+	.nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.nav__item {
+		margin: .5px;
+		width: calc(33.333333% - 1px);
+	}
+	.nav__item:nth-child(1) {
+		border-radius: .5em 0 0 0;
+	}
+	.nav__item:nth-child(3) {
+		border-radius: 0 .5em 0 0;
+	}
+	.nav__item:nth-child(4) {
+		border-radius: 0 0 0 .5em;
+	}
+	.nav__item:nth-child(6) {
+		border-radius: 0 0 .5em 0;
+	}
+}
+
+
+@media (min-width: 40em) {
+	.nav__item:nth-child(n) {
+		border-radius: 0;
+		padding: .75em 1em;
+		width: auto;
+	}
+	.nav__item:nth-child(1) {
+		border-radius: .5em 0 0 .5em;
+	}
+	.nav__item:nth-child(6) {
+		border-radius: 0 .5em .5em 0;
+	}
+}
+
+
+
+
+
