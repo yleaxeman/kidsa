@@ -6,19 +6,19 @@
     <title>Clash Royale Stats</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body onload="initAPI()">
+  <body>
 
     <h1 class="page-title">Clash Royale stats</h1>
 
     <p class="user" id="current-user"></p>
 
     <nav class="nav">
-      <button class="nav__item" type="button">Klan</button>
-      <button class="nav__item" type="button">Statistikk</button>
-      <button class="nav__item" type="button">Spill</button>
-      <button class="nav__item" type="button">Nåværende kort</button>
-      <button class="nav__item" type="button">Alle kort</button>
-      <button class="nav__item" type="button">Prestasjoner</button>
+      <button class="nav__item" type="button" data-switch="clan">Klan</button>
+      <button class="nav__item" type="button" data-switch="stats">Statistikk</button>
+      <button class="nav__item" type="button" data-switch="games">Spill</button>
+      <button class="nav__item" type="button" data-switch="currentDeck">Nåværende kort</button>
+      <button class="nav__item" type="button" data-switch="cards">Alle kort</button>
+      <button class="nav__item" type="button" data-switch="achievements">Prestasjoner</button>
     </nav>
 
     <div class="data" id="clash-data"></div>
