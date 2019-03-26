@@ -35,6 +35,7 @@ body > * {
 img {
     max-width: 100%;
     height: auto;
+    vertical-align: middle;
 }
 
 .page-title {
@@ -121,26 +122,71 @@ img {
 }
 
 .data {
-    margin-bottom: 2em;
+    margin: 0 auto;
     overflow: auto;
+    width: 100%;
+}
+
+.data.narrow {
+    max-width: 35em;
+}
+
+.data.wide {
+    max-width: 100em;
 }
 
 table {
     border-collapse: collapse;
-    margin: auto;
+    margin: auto auto 5em;
     width: 100%;
+}
+
+table table {
+    margin-bottom: 0;
+}
+
+tbody {
+    display: table;
+    margin-bottom: 1em;
+}
+tbody:nth-child(2n) {
+    background-color: white;
+}
+tbody:nth-child(2n) tr:first-child th,
+tbody:nth-child(2n) tr:first-child td {
+    background-color: #e6ffe6;
+}
+tbody:nth-child(2n + 1) {
+    background-color: #f6f6f6;
+}
+tbody:nth-child(2n + 1) tr:first-child th,
+tbody:nth-child(2n + 1) tr:first-child td {
+    background-color: #e6e6ff;
 }
 
 th,
 td {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 0.5em;
     text-align: left;
     vertical-align: top;
 }
 
-.fill {
-    width: 90%;
+th {
+    font-size: 0.875em;
+    hyphens: auto;
+    padding: 0.5714em;
+    width: 6em;
+    word-break: break-word;
+}
+
+td img {
+    max-width: 4em;
+    transition: transform 0.25s;
+}
+
+td img:hover {
+    transform: scale(3);
 }
 
 td.have-children {
@@ -171,12 +217,17 @@ td.have-children {
 
 @media (min-width: 30em) {
     body {
-        grid-template-columns: 10vw auto 10vw;
+        grid-template-columns: 3vw auto 3vw;
+    }
+
+    th {
+        width: 8em;
     }
 
     .page-title {
         font-size: 2em;
     }
+
     .nav__item:nth-child(n) {
         border-radius: 0;
         width: calc(33.333333% - 1px);
@@ -196,6 +247,10 @@ td.have-children {
 }
 
 @media (min-width: 40em) {
+    th {
+        width: 9em;
+    }
+
     .nav__item:nth-child(n) {
         border-radius: 0;
         padding: 0.75em 1em;
@@ -206,5 +261,16 @@ td.have-children {
     }
     .nav__item:nth-child(6) {
         border-radius: 0 0.5em 0.5em 0;
+    }
+
+    .data.wide table {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .data.wide tbody {
+        flex: 1;
+        flex-basis: 22em;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
     }
 }
