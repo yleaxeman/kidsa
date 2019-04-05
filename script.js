@@ -15,18 +15,10 @@ var initApp = function() {
     userContainer.innerHTML = clashData.name;
 
     //list ut dataene i konsollvinduet for referanse
-    console.log(clashData);
+    //console.log(clashData);
 
     //initialiser kategori-navigasjonen, og aktiver sist valgte kategori
     detectNavigation();
-};
-
-var isImage = function(propVal) {
-    var imageTag = propVal;
-    if (propVal.endsWith('.png')) {
-        imageTag = '<img src="' + propVal + '" alt="">';
-    }
-    return imageTag;
 };
 
 var httpGet = function(url, key) {
@@ -35,6 +27,14 @@ var httpGet = function(url, key) {
     xmlHttp.setRequestHeader('auth', key);
     xmlHttp.send(null);
     return xmlHttp.responseText;
+};
+
+var isImage = function(propVal) {
+    var imageTag = propVal;
+    if (propVal.endsWith('.png')) {
+        imageTag = '<img src="' + propVal + '" alt="">';
+    }
+    return imageTag;
 };
 
 var detectNavigation = function() {
