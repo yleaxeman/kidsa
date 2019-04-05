@@ -215,6 +215,7 @@ td.have-children {
     border-right: 0;
 }
 
+/* når bredden på nettleseren er mer enn 480 pixler */
 @media (min-width: 30em) {
     body {
         grid-template-columns: 3vw auto 3vw;
@@ -246,6 +247,7 @@ td.have-children {
     }
 }
 
+/* når bredden på nettleseren er mer enn 640 pixler */
 @media (min-width: 40em) {
     th {
         width: 9em;
@@ -264,13 +266,13 @@ td.have-children {
     }
 
     .data.wide table {
-        display: flex;
-        flex-wrap: wrap;
     }
     .data.wide tbody {
-        flex: 1;
-        flex-basis: 22em;
-        margin-right: 0.5em;
-        margin-left: 0.5em;
+    }
+}
+
+/* når bredden på nettleseren er mer enn 960 pixler */
+@media (min-width: 60em) {
+    .data.wide table {
     }
 }
