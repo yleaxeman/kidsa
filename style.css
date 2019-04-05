@@ -193,6 +193,10 @@ td.have-children {
     padding: 0;
 }
 
+.current td {
+    background-color: pink;
+}
+
 .have-children table {
     width: 100%;
 }
